@@ -249,7 +249,10 @@ img {
 }
 
 /* Change background header */
-
+.bg-header {
+    background-color: var(--body-color);
+    box-shadow: 0 4px 8px hsla(180, 12%, 4%, 0.3);
+}
 
 /* Active link */
 
@@ -353,7 +356,15 @@ img {
 }
 
 /*=============== LOGOS ===============*/
+.logos__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+}
 
+.logo__img {
+    width: 120px;
+}
 
 /*=============== PROGRAM ===============*/
 
