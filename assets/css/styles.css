@@ -159,8 +159,6 @@ img {
     color: var(--first-color);
 }
 
-
-
 /*=============== HEADER & NAV ===============*/
 .header {
     width: 100%;
@@ -257,7 +255,9 @@ img {
 }
 
 /* Active link */
-
+.active-link {
+    color: var(--first-color);
+}
 
 /*=============== HOME ===============*/
 .home {
