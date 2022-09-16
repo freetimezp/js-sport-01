@@ -86,6 +86,62 @@ const calculateBmi = (e) => {
 
 calculateForm.addEventListener('submit', calculateBmi);
 
-
-
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form');
+const contactMessage = document.getElementById('contact-message');
+const contactUser = document.getElementById('contact-user');
+
+const sendEmail = (e) => {
+    e.preventDefault();
+
+    if(contactUser.value === '') {
+        contactMessage.classList.remove('color-green');
+        contactMessage.classList.add('color-red');
+
+        contactMessage.textContent = 'You must enter your email..';
+        setTimeout(() => {
+            contactMessage.textContent = '';
+        }, 3000);
+    }else{
+        //use emailjs form
+        //serviceID - templateID - #form - publicKey
+        emailjs.sendForm('service_lqpyxd1', 'template_3ty9whb', '#contact-form', 'zD3RfwuWCXS8LY9MV')
+            .then(() => {
+                contactMessage.classList.add('color-green');
+                contactMessage.textContent = 'You registered successfully!';
+
+                setTimeout(() => {
+                    contactMessage.textContent = '';
+                }, 3000);
+            }, (error) => {
+                alert('OOPS! Something wrong.. try later..', error);
+            });
+
+        contactUser.value = '';
+    }
+}
+
+contactForm.addEventListener('submit', sendEmail);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
